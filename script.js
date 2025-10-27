@@ -213,6 +213,11 @@ document.querySelectorAll('.portfolio-card').forEach(card => {
     });
 });
 
+// ===== HELPER FUNCTION FOR CURRENCY FORMATTING =====
+const formatCurrency = (amount) => {
+    return `$${amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+};
+
 // ===== DYNAMIC MARKET PRICE UPDATES (SIMULATION) =====
 const updateMarketPrices = () => {
     document.querySelectorAll('.market-row:not(.market-header)').forEach(row => {
@@ -221,13 +226,20 @@ const updateMarketPrices = () => {
         
         if (priceCell && changeCell) {
             // Simulate small price fluctuations
-            const currentPrice = parseFloat(priceCell.textContent.replace(/[$,]/g, ''));
+            const priceText = priceCell.textContent.replace(/[$,]/g, '');
+            const currentPrice = parseFloat(priceText);
+            
+            // Validate parsed price
+            if (isNaN(currentPrice) || currentPrice <= 0) {
+                return;
+            }
+            
             const fluctuation = (Math.random() - 0.5) * 0.01; // ±0.5% change
             
             // Occasionally update prices (10% chance each interval)
             if (Math.random() < 0.1) {
                 const newPrice = currentPrice * (1 + fluctuation);
-                priceCell.textContent = `$${newPrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+                priceCell.textContent = formatCurrency(newPrice);
                 
                 // Add flash animation
                 priceCell.style.transition = 'all 0.3s ease';
@@ -280,10 +292,15 @@ window.addEventListener('load', () => {
 // ===== CURSOR TRAIL EFFECT (OPTIONAL) =====
 let cursorTrail = [];
 const maxTrailLength = 20;
+let lastTrailTime = 0;
+const trailThrottle = 50; // milliseconds
 
 document.addEventListener('mousemove', (e) => {
-    // Only on desktop
-    if (window.innerWidth > 768) {
+    // Only on desktop and throttle the event
+    const now = Date.now();
+    if (window.innerWidth > 768 && now - lastTrailTime > trailThrottle) {
+        lastTrailTime = now;
+        
         const trail = document.createElement('div');
         trail.style.cssText = `
             position: fixed;

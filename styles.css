@@ -173,6 +173,13 @@ body {
     animation: shimmer 3s infinite;
 }
 
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+    .gradient-text {
+        color: var(--accent-color);
+    }
+}
+
 @keyframes shimmer {
     0%, 100% {
         background-position: 0% 50%;
@@ -368,6 +375,13 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+    .section-title {
+        color: var(--accent-color);
+    }
 }
 
 .portfolio-grid {
