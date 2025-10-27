@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub - Your Financial Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>FinanceHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#markets" class="nav-link">Markets</a></li>
+                <li><a href="#insights" class="nav-link">Insights</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Manage Your Wealth
+                <span class="gradient-text">Intelligently</span>
+            </h1>
+            <p class="hero-subtitle">Track investments, analyze trends, and grow your portfolio with powerful financial tools</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="50000">0</h3>
+                    <p class="stat-label">Active Users</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="2500000">0</h3>
+                    <p class="stat-label">Assets Under Management</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="98">0</h3>
+                    <p class="stat-label">Success Rate %</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p class="stat-label">Countries Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Your Portfolio Overview</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="card-header">
+                        <h3>Total Balance</h3>
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="balance">$124,567.89</h2>
+                        <div class="balance-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12.5% this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-header">
+                        <h3>Stocks</h3>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="balance">$78,234.12</h2>
+                        <div class="balance-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+8.3%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-header">
+                        <h3>Crypto</h3>
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="balance">$32,145.67</h2>
+                        <div class="balance-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+15.2%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-header">
+                        <h3>Savings</h3>
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="balance">$14,188.10</h2>
+                        <div class="balance-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+2.1%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Markets Section -->
+    <section class="markets-section" id="markets">
+        <div class="container">
+            <h2 class="section-title">Live Market Data</h2>
+            <div class="market-table">
+                <div class="market-row market-header">
+                    <div class="market-cell">Asset</div>
+                    <div class="market-cell">Price</div>
+                    <div class="market-cell">24h Change</div>
+                    <div class="market-cell">Volume</div>
+                    <div class="market-cell">Action</div>
+                </div>
+                <div class="market-row">
+                    <div class="market-cell">
+                        <i class="fab fa-bitcoin crypto-icon"></i>
+                        <span class="asset-name">Bitcoin (BTC)</span>
+                    </div>
+                    <div class="market-cell">$43,567.89</div>
+                    <div class="market-cell positive">+3.45%</div>
+                    <div class="market-cell">$28.5B</div>
+                    <div class="market-cell"><button class="btn-small">Trade</button></div>
+                </div>
+                <div class="market-row">
+                    <div class="market-cell">
+                        <i class="fab fa-ethereum crypto-icon"></i>
+                        <span class="asset-name">Ethereum (ETH)</span>
+                    </div>
+                    <div class="market-cell">$2,345.67</div>
+                    <div class="market-cell positive">+5.12%</div>
+                    <div class="market-cell">$12.3B</div>
+                    <div class="market-cell"><button class="btn-small">Trade</button></div>
+                </div>
+                <div class="market-row">
+                    <div class="market-cell">
+                        <i class="fas fa-dollar-sign crypto-icon"></i>
+                        <span class="asset-name">Tesla (TSLA)</span>
+                    </div>
+                    <div class="market-cell">$234.56</div>
+                    <div class="market-cell negative">-1.23%</div>
+                    <div class="market-cell">$8.7B</div>
+                    <div class="market-cell"><button class="btn-small">Trade</button></div>
+                </div>
+                <div class="market-row">
+                    <div class="market-cell">
+                        <i class="fas fa-dollar-sign crypto-icon"></i>
+                        <span class="asset-name">Apple (AAPL)</span>
+                    </div>
+                    <div class="market-cell">$178.90</div>
+                    <div class="market-cell positive">+2.34%</div>
+                    <div class="market-cell">$15.2B</div>
+                    <div class="market-cell"><button class="btn-small">Trade</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights-section" id="insights">
+        <div class="container">
+            <h2 class="section-title">Financial Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Smart Recommendations</h3>
+                    <p>AI-powered investment suggestions tailored to your goals and risk profile</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Transactions</h3>
+                    <p>Bank-level encryption and multi-factor authentication to protect your assets</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile First</h3>
+                    <p>Access your portfolio anytime, anywhere with our responsive platform</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Expert financial advisors available round the clock to assist you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@financehub.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Finance Street, New York, NY 10001</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About FinanceHub</h4>
+                    <p>Your trusted partner in wealth management and financial growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#markets">Markets</a></li>
+                        <li><a href="#insights">Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FinanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
